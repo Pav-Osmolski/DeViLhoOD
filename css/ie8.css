@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Retain background transparency */
+#header_container {
+	background: transparent;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#19000000,endColorstr=#19000000)"; /* IE8 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#19000000,endColorstr=#19000000); /* IE6 & 7 */
+	zoom: 1;
+}

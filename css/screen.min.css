@@ -1,0 +1,162 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'League Gothic';
+    src: url(../fonts/leaguegothic-regular-webfont.eot);
+    src: url(../fonts/leaguegothic-regular-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/leaguegothic-regular-webfont.woff) format('woff'), url(../fonts/leaguegothic-regular-webfont.ttf) format('truetype'), url(../fonts/leaguegothic-regular-webfont.svg#league_gothicregular) format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+.section {
+    text-align: center
+}
+#slide1 {
+    background-image: url(../images/radiohead-background-twisted.jpg)
+}
+#slide2 {
+    background-image: url(../images/filiposcar.jpg)
+}
+#slide3 {
+    background-image: url(../images/pawel-osmolski-glasses-right.jpg)
+}
+#slide4 {
+    background-image: url(../images/devilhood-background-dark.jpg)
+}
+#slide5 {
+    background-image: url(../images/crownandcraft-background-microphone.jpg)
+}
+#slide6 {
+    background-image: url(../images/crunchalias-background-rockgarden.jpg)
+}
+#slide1, #slide2, #slide3, #slide4, #slide5, #slide6 {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover!important
+}
+.shadow {
+    text-shadow: 2px 2px 6px #141414
+}
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 0 20px;
+}
+.smooth-fonts {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%
+}
+body {
+    font-family: 'League Gothic', sans-serif;
+    color: #fff;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden
+}
+p {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 1.8em;
+    line-height: 1.15em
+}
+a {
+    color: #fff;
+    -webkit-transition: color .2s ease-out;
+    -moz-transition: color .2s ease-out;
+    -ms-transition: color .2s ease-out;
+    -o-transition: color .2s ease-out;
+    transition: color .2s ease-out
+}
+a:focus, a:hover {
+    color: #89a3bc
+}
+a:focus.rhead-remixes, a:hover.rhead-remixes {
+    color: #aab0e6
+}
+a:focus.crownandcraft, a:hover.crownandcraft {
+    color: #e6c2a4
+}
+a:focus.calias, a:hover.calias {
+    color: #efb6b6
+}
+a:focus.dhood, a:hover.dhood {
+    color: #caade5
+}
+a:focus.filiposcar, a:hover.filiposcar {
+    color: #efb6b6
+}
+a.title {
+    text-decoration: none
+}
+img {
+    max-width: 100%;
+    border: 0
+}
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+    background: #fff
+}
+div {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+#calias, #crownandcraft, #dhood, #filiposcar, #posmolski, #rhead-remixes {
+    font-size: 5.05em;
+    line-height: 1em;
+    text-align: center;
+    padding: 0 10%;
+    margin-top: 8px
+}
+.title-menu {
+    width: 100%;
+    font-size: 1.5em;
+    margin: 0 auto
+}
+#abandoned {
+    width: 90%;
+    max-width: 700px;
+    max-height: 205px;
+    margin: 0 auto;
+    padding: 10px
+}
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li a.active span, .fp-slidesNav ul li:hover a.active span {
+    height: 24px;
+    width: 24px;
+    margin: -12px 0 0 -12px;
+    border-radius: 0;
+    box-shadow: 2px 2px 6px #141414
+}
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+    border-radius: 0;
+    height: 8px;
+    width: 8px;
+    border: 0;
+    margin: -4px 0 0 -4px;
+    box-shadow: 2px 2px 6px #141414
+}
+#fp-nav ul li:hover a span, .fp-slidesNav ul li:hover a span {
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    box-shadow: 2px 2px 6px #141414
+}
+@media screen and (max-width:768px) {
+    .clear-mobile {
+        clear: both
+    }
+    #calias, #crownandcraft, #dhood, #filiposcar, #posmolski, #rhead-remixes {
+        font-size: 3.05em
+    }
+}
