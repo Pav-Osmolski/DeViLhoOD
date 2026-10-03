@@ -9,11 +9,6 @@
   RewriteRule ^(.*)$ http://www.devilhood.com/$1 [R=301,L]
 </IfModule>
 
-##<IfModule mod_rewrite.c>
-##  RewriteRule ^(.*\.js) gzip.php?type=js&file=$1
-##  RewriteRule ^(.*\.css) gzip.php?type=css&file=$1
-##</IfModule>
-
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
 ExpiresActive On
