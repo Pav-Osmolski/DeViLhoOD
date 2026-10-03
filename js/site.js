@@ -38,8 +38,10 @@
           ctx.lineWidth = ring % 5 === 0 ? 1.7 : .8;
           ctx.stroke();
         }
-        ctx.fillStyle = accent;
-        ctx.beginPath();ctx.arc(cx, cy, 9, 0, Math.PI * 2);ctx.fill();
+        ctx.strokeStyle = accent;
+        ctx.lineWidth = 1.4;
+        // Outer radius is 7.2px, 20% smaller than the original 9px dot.
+        ctx.beginPath();ctx.arc(cx, cy, 6.5, 0, Math.PI * 2);ctx.stroke();
       };
       let last = 0;
       const animate = time => {
