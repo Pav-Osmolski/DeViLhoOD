@@ -148,6 +148,10 @@ h1 {
   margin:0;
 }
 
+.headline-plain {
+  font-size:.95em;
+}
+
 h1 em {
   display:inline-block;
   padding-left:.22em;

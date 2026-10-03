@@ -8,7 +8,7 @@
   <meta property="og:title" content="devilhood — media archive">
   <meta property="og:image" content="https://www.devilhood.com/images/devilhood_logo.jpg">
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/site.css?v=20261003-7">
+  <link rel="stylesheet" href="css/site.css?v=20261003-8">
   <script src="js/site.js?v=20261003-6" defer></script>
 </head>
 <body>
@@ -19,7 +19,7 @@
     <nav aria-label="Main navigation"><a href="./">All worlds ↗</a><a href="mailto:pawel@pawel-osmolski.com">Say hello ↗</a></nav>
   </header>
   <main class="archive-main" id="collections">
-    <div class="archive-intro"><div><p class="eyebrow"><span class="signal-dot"></span> Collected / remembered / rediscovered</p><h1>media<br><em>archive.</em></h1></div><p>Trinkets &amp; treasures. Recordings from different lives.<br>Remixes, piano works, little experiments and things that refused to disappear.</p></div>
+    <div class="archive-intro"><div><p class="eyebrow"><span class="signal-dot"></span> Collected / remembered / rediscovered</p><h1><span class="headline-plain">media</span><br><em>archive.</em></h1></div><p>Trinkets &amp; treasures. Recordings from different lives.<br>Remixes, piano works, little experiments and things that refused to disappear.</p></div>
     <nav class="archive-nav" aria-label="Archive collections"><a href="#radiohead-remixes">Radiohead Remixes</a><a href="#covers">Covers</a><a href="#the-thorn-collection">The Thorn Collection</a><a href="#abandoned">Abandoned</a><a href="#chip-music">Chip Music</a><a href="#ye-olde-projects">Ye Olde Projects</a></nav>
     <div class="archive-tools" hidden><label for="track-search">Find a recording</label><input id="track-search" type="search" placeholder="A title, a memory…" aria-controls="archive-grid"><p id="search-count" role="status"></p></div>
     <p class="no-results" hidden>No recordings found. Try another title.</p>
