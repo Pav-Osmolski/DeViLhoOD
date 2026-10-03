@@ -254,25 +254,8 @@ h1 em {
 }
 
 .worlds {
-  position:relative;
-  isolation:isolate;
   padding:40px 5% 60px;
   border-top:1px solid var(--ink);
-}
-
-.worlds-background {
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  background-position:center;
-  background-size:cover;
-  opacity:0;
-  transition:opacity .45s ease;
-}
-
-.worlds-background.is-visible {
-  opacity:.5;
 }
 
 .world-list {

@@ -65,46 +65,11 @@
       resize();sync();
     }
     const photo = document.querySelector('.art-photo');
-    const worlds = document.querySelector('.worlds');
-    const layers = worlds ? [0, 1].map(() => {
-      const layer = document.createElement('div');
-      layer.className = 'worlds-background';
-      layer.setAttribute('aria-hidden', 'true');
-      worlds.prepend(layer);
-      return layer;
-    }) : [];
-    let activeLayer = 0;
-    let activeImage = '';
-    let hoveredWorld = null;
-    let focusedWorld = null;
-    let previewRequest = 0;
-    const showBackground = world => {
-      const request = ++previewRequest;
-      if (!world) {
-        activeImage = '';
-        layers.forEach(layer => layer.classList.remove('is-visible'));
-        return;
-      }
-      const source = world.dataset.image;
-      if (photo) photo.style.backgroundImage = `url("${source}")`;
-      if (!layers.length || source === activeImage) return;
-      const image = new Image();
-      image.onload = () => {
-        if (request !== previewRequest) return;
-        activeLayer = 1 - activeLayer;
-        layers[activeLayer].style.backgroundImage = `url("${source}")`;
-        layers[activeLayer].classList.add('is-visible');
-        layers[1 - activeLayer].classList.remove('is-visible');
-        activeImage = source;
-      };
-      image.src = source;
-    };
     document.querySelectorAll('.world').forEach(world => {
-      world.addEventListener('pointerenter', () => { hoveredWorld = world; showBackground(world); });
-      world.addEventListener('focus', () => { focusedWorld = world; showBackground(world); });
-      world.addEventListener('blur', () => { focusedWorld = null; showBackground(hoveredWorld); });
+      const preview = () => { if (photo) photo.style.backgroundImage = `url("${world.dataset.image}")`; };
+      world.addEventListener('pointerenter', preview);
+      world.addEventListener('focus', preview);
     });
-    worlds?.addEventListener('pointerleave', () => { hoveredWorld = null; showBackground(focusedWorld); });
   }
   const search = document.querySelector('#track-search');
   const collections = [...document.querySelectorAll('.collection')];
