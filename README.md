@@ -43,4 +43,4 @@ The permanent redirect was checked with a local PHP router matching the Apache r
 
 ## License
 
-Copyright © 2026 Pawel Osmolski. All rights reserved. See [LICENSE](LICENSE). Third-party material retains its own rights and terms.
+Copyright © 2026 Pawel Osmolski (DeViLhoOD). All rights reserved. See [LICENSE](LICENSE). Third-party material retains its own rights and terms.
