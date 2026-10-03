@@ -17,6 +17,7 @@ Open `http://localhost:8000`. The PHP development server does not read `.htacces
 - Both pages use `images/devilhood-background-latin.jpg` as a fixed cover background. The shared brand accent is `--perfect-purple: #8b18bc`, including text, links and canvas artwork.
 - Responsive portal with six original destinations, generative contour animation and pointer/keyboard image previews.
 - The existing lowercase Blackadder-style devilhood wordmark is reused as an image, so visitors do not need the font installed. No commercial font file is redistributed.
+- The supplied `fonts/The-Dreamer.woff` provides the handwritten type for “frequency.”, “archive.” and “Everything leaves an echo.”.
 - Vanilla JavaScript and CSS replace the active jQuery/fullPage/Flash-era integrations. Old library files remain in the repository for historical compatibility but are no longer loaded by either page.
 - Reduced-motion preferences, an explicit pause control, keyboard focus, skip links and native audio controls are supported.
 - `media.php` preserves all 73 archive entries and their original credits and 105 non-navigation links. Search and in-page playback are progressive enhancements; downloads remain available without JavaScript.

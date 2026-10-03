@@ -1,3 +1,11 @@
+@font-face {
+  font-family:'The Dreamer';
+  src:url('../fonts/The-Dreamer.woff') format('woff');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
 :root {
   --paper:#efeded;
   --ink:#232520;
@@ -141,9 +149,12 @@ h1 {
 }
 
 h1 em {
+  display:inline-block;
+  padding-left:.22em;
   color:var(--perfect-purple);
-  font-family:Georgia,'Times New Roman',serif;
-  letter-spacing:-.075em;
+  font-family:'The Dreamer',Georgia,serif;
+  font-style:normal;
+  letter-spacing:0;
   font-weight:400;
 }
 
@@ -191,15 +202,6 @@ h1 em {
   opacity:.28;
   transition:background-image .4s,opacity .4s;
   transform:rotate(12deg);
-}
-
-.art-cross {
-  position:absolute;
-  right:9%;
-  top:15%;
-  font-size:60px;
-  font-weight:200;
-  color:var(--perfect-purple);
 }
 
 .art-label {
@@ -296,11 +298,12 @@ h1 em {
 }
 
 .postscript {
-  font:italic 26px Georgia;
+  font:400 40px 'The Dreamer',Georgia,serif;
   margin:50px 0 0;
 }
 
 .postscript span {
+  font-family:Georgia,serif;
   float:right;
   font-size:70px;
   line-height:.5;
@@ -623,7 +626,7 @@ h1 em {
     width:100%;
   }
   .postscript {
-    font-size:22px;
+    font-size:32px;
   }
 }
 

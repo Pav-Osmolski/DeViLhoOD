@@ -8,8 +8,8 @@
   <meta property="og:title" content="devilhood — instance of a specified state">
   <meta property="og:image" content="https://www.devilhood.com/images/devilhood_logo.jpg">
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/site.css?v=20261003-3">
-  <script src="js/site.js?v=20261003-3" defer></script>
+  <link rel="stylesheet" href="css/site.css?v=20261003-4">
+  <script src="js/site.js?v=20261003-4" defer></script>
 </head>
 <body>
   <a class="skip" href="#worlds">Skip to the worlds</a>
@@ -25,7 +25,7 @@
         <p class="intro">A collection of worlds, connected by a loose thread.</p>
         <a class="explore" href="#worlds">Follow the thread <span>↓</span></a>
       </div>
-      <div class="art" aria-hidden="true"><canvas id="contours"></canvas><div class="art-photo"></div><span class="art-cross">+</span><span class="art-label">FIG. 01 / A SIGNAL IN THE NOISE</span><span class="art-coordinate">51° N<br>∞ Hz</span></div>
+      <div class="art" aria-hidden="true"><canvas id="contours"></canvas><div class="art-photo"></div><span class="art-label">FIG. 01 / A SIGNAL IN THE NOISE</span><span class="art-coordinate">51° N<br>∞ Hz</span></div>
       <span class="margin-note" aria-hidden="true">MAKE THE WAY FOR WINGS SO YOU DON'T NEED TO RUN</span>
     </section>
     <section class="worlds" id="worlds" aria-labelledby="worlds-title">

@@ -8,8 +8,8 @@
   <meta property="og:title" content="devilhood — media archive">
   <meta property="og:image" content="https://www.devilhood.com/images/devilhood_logo.jpg">
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/site.css?v=20261003-3">
-  <script src="js/site.js?v=20261003-3" defer></script>
+  <link rel="stylesheet" href="css/site.css?v=20261003-4">
+  <script src="js/site.js?v=20261003-4" defer></script>
 </head>
 <body>
   <a class="skip" href="#collections">Skip to the collections</a>
