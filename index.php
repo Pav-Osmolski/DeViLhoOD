@@ -21,7 +21,7 @@
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy"><p class="eyebrow"><span class="signal-dot"></span> Independent transmissions / <span class="eyebrow-author">Pawel Osmolski</span></p>
-        <h1 id="hero-title"><span class="headline-plain">a little<br>out of</span><br><em>frequency.</em></h1>
+        <h1 id="hero-title"><span class="headline-plain">a little<br>out of</span><br><em>frequency</em></h1>
         <p class="intro">A collection of worlds, connected by a loose thread.</p>
         <a class="explore" href="#worlds">Follow the thread <span>↓</span></a>
       </div>
