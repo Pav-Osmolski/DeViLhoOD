@@ -1,8 +1,8 @@
 :root {
-  --paper:#e9e6dd;
+  --paper:#efeded;
   --ink:#232520;
   --muted:#66685e;
-  --red:#bb381f;
+  --perfect-purple:#8b18bc;
   --line:#b7b8ac;
   font-family:Arial,Helvetica,sans-serif;
   color:var(--ink);
@@ -20,16 +20,17 @@ html {
 
 body {
   margin:0;
+  isolation:isolate;
 }
 
+/* A fixed layer keeps the cover artwork stable on desktop and mobile. */
 body:before {
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-  z-index:10;
-  opacity:.14;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23000' filter='url(%23n)' opacity='.4' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+  z-index:-1;
+  background:var(--paper) url('../images/devilhood-background-latin.jpg') center center / cover no-repeat;
 }
 
 a {
@@ -41,7 +42,7 @@ button,input {
 }
 
 a:focus-visible,button:focus-visible,input:focus-visible {
-  outline:3px solid var(--red);
+  outline:3px solid var(--perfect-purple);
   outline-offset:5px;
 }
 
@@ -97,7 +98,7 @@ a:focus-visible,button:focus-visible,input:focus-visible {
 }
 
 .masthead nav a:hover {
-  color:var(--red);
+  color:var(--perfect-purple);
 }
 
 .hero {
@@ -126,7 +127,7 @@ a:focus-visible,button:focus-visible,input:focus-visible {
   display:inline-block;
   width:7px;
   height:7px;
-  background:var(--red);
+  background:var(--perfect-purple);
   border-radius:50%;
   margin-right:10px;
 }
@@ -140,7 +141,7 @@ h1 {
 }
 
 h1 em {
-  color:var(--red);
+  color:var(--perfect-purple);
   font-family:Georgia,'Times New Roman',serif;
   letter-spacing:-.075em;
   font-weight:400;
@@ -198,7 +199,7 @@ h1 em {
   top:15%;
   font-size:60px;
   font-weight:200;
-  color:var(--red);
+  color:var(--perfect-purple);
 }
 
 .art-label {
@@ -268,7 +269,7 @@ h1 em {
 
 .world-number {
   font:12px monospace;
-  color:var(--red);
+  color:var(--perfect-purple);
 }
 
 .world-name {
@@ -289,9 +290,9 @@ h1 em {
 }
 
 .world:hover,.world:focus-visible {
-  color:var(--red);
+  color:var(--perfect-purple);
   padding-left:18px;
-  background:#deddd2;
+  background:rgba(139,24,188,.06);
 }
 
 .postscript {
@@ -303,7 +304,7 @@ h1 em {
   float:right;
   font-size:70px;
   line-height:.5;
-  color:var(--red);
+  color:var(--perfect-purple);
 }
 
 .footer {
@@ -414,7 +415,7 @@ h1 em {
 
 .collection-number {
   font:10px monospace;
-  color:var(--red);
+  color:var(--perfect-purple);
   display:block;
   margin-bottom:12px;
 }
@@ -429,14 +430,14 @@ h1 em {
 .track a {
   font:10px monospace;
   text-decoration:none;
-  color:var(--red);
+  color:var(--perfect-purple);
   display:inline-block;
   margin-left:8px;
   border-bottom:1px solid transparent;
 }
 
 .track a:hover {
-  border-bottom-color:var(--red);
+  border-bottom-color:var(--perfect-purple);
 }
 
 .description {
@@ -647,7 +648,7 @@ body.motion-paused {
   float:right;
   background:none;
   border:0;
-  color:var(--red);
+  color:var(--perfect-purple);
   font:11px monospace;
   cursor:pointer;
 }

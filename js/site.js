@@ -9,6 +9,7 @@
   let pointer = { x: 0, y: 0 };
   if (canvas) {
     const ctx = canvas.getContext('2d');
+    const accent = getComputedStyle(document.documentElement).getPropertyValue('--perfect-purple').trim();
     if (ctx) {
       let width = 0, height = 0;
       const resize = () => {
@@ -33,11 +34,11 @@
             point ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
           }
           ctx.closePath();
-          ctx.strokeStyle = ring > 32 && ring < 38 ? '#bb381f' : '#232520';
+          ctx.strokeStyle = ring > 32 && ring < 38 ? accent : '#232520';
           ctx.lineWidth = ring % 5 === 0 ? 1.7 : .8;
           ctx.stroke();
         }
-        ctx.fillStyle = '#bb381f';
+        ctx.fillStyle = accent;
         ctx.beginPath();ctx.arc(cx, cy, 9, 0, Math.PI * 2);ctx.fill();
       };
       let last = 0;

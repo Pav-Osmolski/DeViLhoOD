@@ -14,6 +14,7 @@ Open `http://localhost:8000`. The PHP development server does not read `.htacces
 
 ## Design and implementation
 
+- Both pages use `images/devilhood-background-latin.jpg` as a fixed cover background. The shared brand accent is `--perfect-purple: #8b18bc`, including text, links and canvas artwork.
 - Responsive portal with six original destinations, generative contour animation and pointer/keyboard image previews.
 - The existing lowercase Blackadder-style devilhood wordmark is reused as an image, so visitors do not need the font installed. No commercial font file is redistributed.
 - Vanilla JavaScript and CSS replace the active jQuery/fullPage/Flash-era integrations. Old library files remain in the repository for historical compatibility but are no longer loaded by either page.
