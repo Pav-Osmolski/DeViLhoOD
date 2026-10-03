@@ -38,7 +38,7 @@
         <a class="world" href="http://www.crownandcraft.com" data-image="images/crownandcraft-background-microphone.jpg"><span class="world-number">05</span><span class="world-name">Crown &amp; Craft</span><span class="world-type">From the studio</span><span class="world-arrow">↗</span></a>
         <a class="world" href="http://www.crunchalias.com" data-image="images/crunchalias-background-rockgarden.jpg"><span class="world-number">06</span><span class="world-name">CrunchAlias</span><span class="world-type">Electric memories</span><span class="world-arrow">↗</span></a>
       </div>
-      <p class="postscript">Everything leaves an echo.<span aria-hidden="true">⤳</span></p>
+      <p class="postscript">Everything leaves an echo<span aria-hidden="true">⤳</span></p>
     </section>
   </main>
   <footer class="footer"><span>© <?php echo date('Y'); ?> Pawel Osmolski</span><span>Somewhere between order &amp; noise.</span><button class="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button></footer>
