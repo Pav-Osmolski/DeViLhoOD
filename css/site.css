@@ -413,6 +413,14 @@ h1 em {
   text-decoration:none;
 }
 
+.collection-artwork {
+  display:block;
+  width:288px;
+  max-width:100%;
+  height:auto;
+  margin:-6px 0 24px;
+}
+
 .collection-number {
   font:10px monospace;
   color:var(--perfect-purple);

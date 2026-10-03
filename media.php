@@ -8,8 +8,8 @@
   <meta property="og:title" content="devilhood — media archive">
   <meta property="og:image" content="https://www.devilhood.com/images/devilhood_logo.jpg">
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/site.css?v=20261003-2">
-  <script src="js/site.js?v=20261003-2" defer></script>
+  <link rel="stylesheet" href="css/site.css?v=20261003-3">
+  <script src="js/site.js?v=20261003-3" defer></script>
 </head>
 <body>
   <a class="skip" href="#collections">Skip to the collections</a>
@@ -59,7 +59,7 @@
         I Get Nervous composed by <a class="title" href="http://lowerdens.com/" target="_blank" rel="noopener noreferrer">Lower Dens</a>.<br />
         Climbing Cycle is a short piano idea composed by Jonny Greenwood.<br />
         Nice Dream composed by <a class="title" href="http://www.radiohead.co.uk" target="_blank" rel="noopener noreferrer">Radiohead</a>.</div></section>
-<section class="collection" id="the-thorn-collection"><span class="collection-number">COLLECTION / 03</span><h2><a class="title" href="#the-thorn-collection">The Thorn Collection</a></h2>
+<section class="collection" id="the-thorn-collection"><span class="collection-number">COLLECTION / 03</span><h2><a class="title" href="#the-thorn-collection">The Thorn Collection</a></h2><img class="collection-artwork" src="images/hires/title-the-thorn-collection.png" alt="A stem with thorns" width="576" height="122" decoding="async">
       <div class="track">Abandoned <a class="files title" href="media/audio/piano/ttc-abandoned.mp3" target="_blank" rel="noopener noreferrer">MP3</a></div>
       <div class="track">Alone <a class="files title" href="media/audio/piano/ttc-alone.mp3" target="_blank" rel="noopener noreferrer">MP3</a></div>
       <div class="track">It's Over <a class="files title" href="media/audio/piano/ttc-itsover.mp3" target="_blank" rel="noopener noreferrer">MP3</a></div>
@@ -80,7 +80,7 @@
         All piano compositions written and performed by <a class="title" href="http://www.pawel-osmolski.com" target="_blank" rel="noopener noreferrer">Pawel Osmolski</a>.<br />
         Nocturne Cantabile and Jag recorded from cassette tape-<br />
         and performed for Music GCSE examination.</div></section>
-<section class="collection" id="abandoned"><span class="collection-number">COLLECTION / 04</span><h2><a class="title" href="#abandoned">Abandoned</a></h2>
+<section class="collection" id="abandoned"><span class="collection-number">COLLECTION / 04</span><h2><a class="title" href="#abandoned">Abandoned</a></h2><img class="collection-artwork" src="images/hires/title-abandoned.png" alt="Abandoned skull and horns logo" width="576" height="168" decoding="async">
       <div class="track">Lies <a class="files title" href="media/audio/abandoned/abandoned-lies.mp3" target="_blank" rel="noopener noreferrer">MP3</a></div>
       <div class="track">Burning Pain <a class="files title" href="media/audio/abandoned/abandoned-burning_pain.mp3" target="_blank" rel="noopener noreferrer">MP3</a></div>
       <div class="track">Black Rose <a class="files title" href="media/audio/abandoned/abandoned-black_rose.mp3" target="_blank" rel="noopener noreferrer">MP3</a></div>
@@ -103,7 +103,7 @@
         All instrumental tracks composed and performed by Pawel Osmolski.<br />
         Monkey Song, Wot Da F*ck, Black Rose v2 and Access Denied with Fidan Hassan on drums.<br />
         Guitars by Pawel Osmolski.</div></section>
-<section class="collection" id="chip-music"><span class="collection-number">COLLECTION / 05</span><h2><a class="title" href="#chip-music">Chip Music</a></h2>
+<section class="collection" id="chip-music"><span class="collection-number">COLLECTION / 05</span><h2><a class="title" href="#chip-music">Chip Music</a></h2><img class="collection-artwork" src="images/hires/title-chip-music.png" alt="Five colourful C64 robot sprites" width="576" height="168" decoding="async">
       <div class="track">Autopilot to Cassiopeia <a class="files title" href="http://www.pawel-osmolski.com/media/audio/soundtrack/po-cassiopeia.mp3" target="_blank" rel="noopener noreferrer">MP3</a></div>
       <div class="track">Chipsticks Innit <a class="files title" href="media/audio/game/chipsticksinnit.mp3" target="_blank" rel="noopener noreferrer">MP3</a></div>
       <div class="track">Meet Jimbo Jones <a class="files title" href="media/audio/game/meetjimbojones.mp3" target="_blank" rel="noopener noreferrer">MP3</a></div>
