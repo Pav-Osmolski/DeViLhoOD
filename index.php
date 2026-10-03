@@ -8,8 +8,8 @@
   <meta property="og:title" content="devilhood — instance of a specified state">
   <meta property="og:image" content="https://www.devilhood.com/images/devilhood_logo.jpg">
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/site.css?v=20261003-8">
-  <script src="js/site.js?v=20261003-6" defer></script>
+  <link rel="stylesheet" href="css/site.css?v=20261003-9">
+  <script src="js/site.js?v=20261003-9" defer></script>
 </head>
 <body>
   <a class="skip" href="#worlds">Skip to the worlds</a>
@@ -20,8 +20,8 @@
   </header>
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy"><p class="eyebrow"><span class="signal-dot"></span> Independent transmissions / Pawel Osmolski</p>
-        <h1 id="hero-title"><span class="headline-plain">a little<br>out of</span><br><em>frequency.</em></h1>
+      <div class="hero-copy"><p class="eyebrow"><span class="signal-dot"></span> Independent transmissions / <span class="eyebrow-author">Pawel Osmolski</span></p>
+        <h1 id="hero-title"><span class="headline-plain">a little<br>out of</span><br><em>frequency</em></h1>
         <p class="intro">A collection of worlds, connected by a loose thread.</p>
         <a class="explore" href="#worlds">Follow the thread <span>↓</span></a>
       </div>
@@ -38,7 +38,7 @@
         <a class="world" href="http://www.crownandcraft.com" data-image="images/crownandcraft-background-microphone.jpg"><span class="world-number">05</span><span class="world-name">Crown &amp; Craft</span><span class="world-type">From the studio</span><span class="world-arrow">↗</span></a>
         <a class="world" href="http://www.crunchalias.com" data-image="images/crunchalias-background-rockgarden.jpg"><span class="world-number">06</span><span class="world-name">CrunchAlias</span><span class="world-type">Electric memories</span><span class="world-arrow">↗</span></a>
       </div>
-      <p class="postscript">Everything leaves an echo.<span aria-hidden="true">⤳</span></p>
+      <p class="postscript">Everything leaves an echo<span aria-hidden="true">⤳</span></p>
     </section>
   </main>
   <footer class="footer"><span>© <?php echo date('Y'); ?> Pawel Osmolski</span><span>Somewhere between order &amp; noise.</span><button class="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button></footer>

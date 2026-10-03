@@ -525,6 +525,11 @@ h1 em {
 }
 
 @media(max-width:800px) {
+  .eyebrow-author {
+    display:block;
+    white-space:nowrap;
+    margin-top:6px;
+  }
   .masthead {
     gap:15px;
     min-height:95px;
