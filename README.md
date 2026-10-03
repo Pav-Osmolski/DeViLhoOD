@@ -1,5 +1,7 @@
 # devilhood
 
+![devilhood](images/devilhood_logo_text.png)
+
 An independent portal to music, memory and experiments by Pawel Osmolski.
 
 ## Run locally
