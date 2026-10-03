@@ -1,105 +1,46 @@
-<?php
-    if ( extension_loaded( 'zlib' ) ) {
-        ob_end_clean();
-        ob_start('ob_gzhandler');
-    }
-?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>DeViLhoOD - Instance of a specified state</title>
-	<meta name="description" content="The official DeViLhoOD homepage. Make the way for wings so you don't need to run." />
-	<meta name="author" content="Pawel Osmolski" />
-	<meta name="keywords" content="devilhood,Pawel Osmolski,devil hood,devil,hood,dev,Pawel Filip Osmolski,Osmolski,pawel devilhood,pawel osmolski downloads,pawel osmolski mp3,devilhood mp3,pavel,philip,paul,pawl osmoski,osmoski,pav,powell,powel,pwel,pvel,sam,Sam Morgan,spammy,morgan,morguin,instance of a specified state,studio,producer,composer,abandoned,follow me around,fma,big ideas,big boots,big boots poison mix,man-o-war,present tense,good morning mr. magpie,scatterbrain,as dead as leaves,kroq,acoustic,remix,remixes,radiohead remixes,videotape,videotape mephisto mix,videotape mephisto,videotape remastered" />
-	<meta name="author" content="Pawel Osmolski" />
-	<meta name="copyright" content="Copyright <?php echo date('Y'); ?> Pawel Osmolski" />
-	<meta name="language" content="EN" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5" />
-	<meta property="og:image" content="http://www.devilhood.com/images/devilhood_logo.jpg" />
-	<meta property="og:image:width" content="500" />
-	<meta property="og:image:height" content="500" />
-	<meta property="og:image:type" content="image/jpeg" />
-	<link rel="image_src" href="http://www.devilhood.com/images/devilhood_logo.jpg" />
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="favicon.ico" type="image/x-icon" />
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-	<link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png" />
-	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
-	<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png" />
-	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
-	<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png" />
-	<link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png" />
-	<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png" />
-  <link rel="preload" href="fonts/leaguegothic-regular-webfont.woff" as="font" type="font/woff" crossorigin>
-  <link href="css/jquery.fullPage.min.css?v=20210817" rel="stylesheet" type="text/css" />
-	<link href="css/screen.min.css?v=20210816" rel="stylesheet" type="text/css" />
-	</head>
-	<body class="smooth-fonts">
-			<div>
-				<h1 class="intro shadow">Music by Pawel Osmolski</h1>
-			</div>
-<div id="fullpage">
-      <div class="section" id="section0">
-    <div class="slide" id="slide1" data-anchor="Radiohead-Remixes">
-          <div class="title-menu">
-        <div id="rhead-remixes"><a class="title shadow" href="http://www.pawel-osmolski.com/radiohead-remixes">RADIOHEAD REMIXES</a></div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>devilhood — instance of a specified state</title>
+  <meta name="description" content="Music, experiments and other worlds by Pawel Osmolski. An independent portal to devilhood's creative universe.">
+  <meta property="og:title" content="devilhood — instance of a specified state">
+  <meta property="og:image" content="https://www.devilhood.com/images/devilhood_logo.jpg">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/site.css?v=20261003">
+  <script src="js/site.js?v=20261003" defer></script>
+</head>
+<body>
+  <a class="skip" href="#worlds">Skip to the worlds</a>
+  <header class="masthead">
+    <a class="brand" href="./" aria-label="devilhood home"><img src="images/devilhood/dhlogo_white2.gif" alt="devilhood" width="253" height="54"></a>
+    <span class="mast-note">instance of a specified state</span>
+    <nav aria-label="Main navigation"><a href="media.php">Media archive ↗</a><a href="mailto:pawel@pawel-osmolski.com">Say hello ↗</a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow"><span class="signal-dot"></span> Independent transmissions / Pawel Osmolski</p>
+        <h1 id="hero-title">a little<br>out of<br><em>frequency.</em></h1>
+        <p class="intro">Music. Memory. Beautiful interference.<br>A collection of worlds, connected by a loose thread.</p>
+        <a class="explore" href="#worlds">Follow the thread <span>↓</span></a>
       </div>
-        </div>
-    <div class="slide" id="slide2" data-anchor="Filip-Oscar">
-          <div class="title-menu">
-        <div id="filiposcar"><a class="title shadow" href="https://www.filiposcar.com">FILIP OSCAR</a></div>
+      <div class="art" aria-hidden="true"><canvas id="contours"></canvas><div class="art-photo"></div><span class="art-cross">+</span><span class="art-label">FIG. 01 / A SIGNAL IN THE NOISE</span><span class="art-coordinate">51° N<br>∞ Hz</span></div>
+      <span class="margin-note" aria-hidden="true">MAKE THE WAY FOR WINGS SO YOU DON'T NEED TO RUN</span>
+    </section>
+    <section class="worlds" id="worlds" aria-labelledby="worlds-title">
+      <div class="section-heading"><h2 id="worlds-title">Choose a world.</h2><span>06 doors / one loose thread</span></div>
+      <div class="world-list">
+        <a class="world" href="http://www.pawel-osmolski.com/radiohead-remixes" data-image="images/radiohead-background-twisted.jpg"><span class="world-number">01</span><span class="world-name">Radiohead remixes</span><span class="world-type">Reassembled / reimagined</span><span class="world-arrow">↗</span></a>
+        <a class="world" href="https://www.filiposcar.com" data-image="images/filiposcar.jpg"><span class="world-number">02</span><span class="world-name">Filip Oscar</span><span class="world-type">Another voice</span><span class="world-arrow">↗</span></a>
+        <a class="world" href="http://www.pawel-osmolski.com" data-image="images/pawel-osmolski-glasses-right.jpg"><span class="world-number">03</span><span class="world-name">Pawel Osmolski</span><span class="world-type">Music / composition</span><span class="world-arrow">↗</span></a>
+        <a class="world" href="media.php" data-image="images/devilhood-background-latin.jpg"><span class="world-number">04</span><span class="world-name">Media archive</span><span class="world-type">Trinkets &amp; treasures</span><span class="world-arrow">↗</span></a>
+        <a class="world" href="http://www.crownandcraft.com" data-image="images/crownandcraft-background-microphone.jpg"><span class="world-number">05</span><span class="world-name">Crown &amp; Craft</span><span class="world-type">From the studio</span><span class="world-arrow">↗</span></a>
+        <a class="world" href="http://www.crunchalias.com" data-image="images/crunchalias-background-rockgarden.jpg"><span class="world-number">06</span><span class="world-name">CrunchAlias</span><span class="world-type">Electric memories</span><span class="world-arrow">↗</span></a>
       </div>
-        </div>
-    <div class="slide" id="slide3" data-anchor="Pawel-Osmolski">
-          <div class="title-menu">
-        <div id="posmolski"><a class="title shadow" href="http://www.pawel-osmolski.com">PAWEL OSMOLSKI</a></div>
-      </div>
-        </div>
-    <div class="slide" id="slide4" data-anchor="Media-Archive">
-          <div class="title-menu">
-        <div id="dhood"><a class="title shadow" href="http://www.devilhood.com/media.htm">MEDIA ARCHIVE</a></div>
-      </div>
-        </div>
-    <div class="slide" id="slide5" data-anchor="Crown-And-Craft">
-          <div class="title-menu">
-        <div id="crownandcraft"><a class="title shadow" href="http://www.crownandcraft.com">CROWN &amp; CRAFT</a></div>
-      </div>
-        </div>
-    <div class="slide" id="slide6" data-anchor="CrunchAlias">
-          <div class="title-menu">
-        <div id="calias"><a class="title shadow" href="http://www.crunchalias.com">CRUNCHALIAS</a></div>
-      </div>
-        </div>
-  </div>
-    </div>
-<!--<script type="text/javascript" src="js/jquery/jquery.min.js?v=20181221"></script>-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!--[if (gte IE 8)|!(IE)]><!--><script type="text/javascript" src="js/jquery/jquery.fullPage.min.js?v=20210817"></script><!-- <![endif]-->
-<!--<script type="text/javascript" src="js/jquery/jquery-ui.min.js"></script>-->
-<!--<script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>-->
-<!--[if (gte IE 8)|!(IE)]><!--><script type="text/javascript">
-	$(document).ready(function() {
-		$('#fullpage').fullpage({
-            licenseKey: '40E86943-CCD348AF-ADEEAAF5-825235C2',
-			css3: true,
-			slidesNavigation: 'true',
-			easing: 'swing',
-			verticalCentered: true,
-			resize: false,
-            controlArrows: false,
-		});
-	});
-</script><!-- <![endif]-->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-11094612-1', 'devilhood.com');
-  ga('send', 'pageview');
-
-</script>
+      <p class="postscript">Everything leaves an echo.<span aria-hidden="true">⤳</span></p>
+    </section>
+  </main>
+  <footer class="footer"><span>© <?php echo date('Y'); ?> Pawel Osmolski</span><span>Somewhere between order &amp; noise.</span><button class="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button></footer>
 </body>
 </html>

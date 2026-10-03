@@ -1,6 +1,8 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  # Preserve old archive bookmarks and query strings.
+  RewriteRule ^media\.htm$ media.php [R=301,L,NE]
   RewriteCond %{HTTP_HOST} ^devilhood.com [NC]
   RewriteRule ^(.*)$ http://www.devilhood.com/$1 [L,R=301]
   RewriteCond %{HTTP_HOST} ^(www\.)?devilhood\.co\.uk$ [NC]
