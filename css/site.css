@@ -199,7 +199,7 @@ h1 em {
   background:url('../images/radiohead-background-twisted.jpg') center/cover;
   clip-path:polygon(25% 0,100% 12%,82% 85%,0 100%,12% 45%);
   mix-blend-mode:screen;
-  opacity:.28;
+  opacity:0.5;
   transition:background-image .4s,opacity .4s;
   transform:rotate(12deg);
 }
