@@ -1,7 +1,5 @@
 # devilhood
 
-![devilhood](images/devilhood_logo_text.png)
-
 An independent portal to music, memory and experiments by Pawel Osmolski.
 
 ## Run locally
@@ -27,7 +25,7 @@ Open `http://localhost:8000`. The PHP development server does not read `.htacces
 
 ## Deploy
 
-Upload the changed files over the existing PHP/Apache site, including the hidden `.htaccess` file and the updated `error-pages/` pages. Remove only the obsolete file paths listed in `REMOVED_FILES.txt` from the live code. Preserve all existing `media/`, `private/`, `scores/` and `images/` files; no cleanup is applied to those folders. Recordings and scores are hosted assets that are not checked into this repository; this update does not recreate them.
+Deploy the repository changes, including file deletions, over the existing PHP/Apache site. Include the hidden `.htaccess` file and the updated `error-pages/` pages. Preserve all existing `media/`, `private/`, `scores/` and `images/` files; no cleanup is applied to those folders. Recordings and scores are hosted assets that are not checked into this repository; this update does not recreate them.
 
 The Apache rewrite rule sends `media.htm` to `media.php` with HTTP 301, preserving query strings. Browser redirects retain legacy collection fragments such as `#covers`. Apache requires `mod_rewrite` and permission to read `.htaccess` (`AllowOverride FileInfo`). When rewrite rules are unavailable, `media.htm` provides a browser redirect and a direct link. Its JavaScript fallback preserves query strings and fragments; the meta-refresh fallback targets the base archive URL.
 
@@ -40,3 +38,7 @@ After upload, verify `/`, `/media.php`, and `/media.htm?test=1#covers`, then pla
 The redesign was checked in desktop and mobile Edge: six destinations, no horizontal overflow, keyboard image previews, motion toggle, reduced motion, all 73 entries, search and empty results, playback error/close behavior, JavaScript-free archive, and query/fragment forwarding. PHP syntax checks and JavaScript syntax checks pass. A source comparison confirms all 105 active original archive URLs are retained.
 
 The permanent redirect was checked with a local PHP router matching the Apache rule. The production Apache configuration and actual hosted music playback require post-deployment verification.
+
+## License
+
+Copyright © 2026 Pawel Osmolski. All rights reserved. See [LICENSE](LICENSE). Third-party material retains its own rights and terms.
