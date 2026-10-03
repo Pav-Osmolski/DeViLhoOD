@@ -22,7 +22,7 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy"><p class="eyebrow"><span class="signal-dot"></span> Independent transmissions / Pawel Osmolski</p>
         <h1 id="hero-title">a little<br>out of<br><em>frequency.</em></h1>
-        <p class="intro">Music. Memory. Beautiful interference.<br>A collection of worlds, connected by a loose thread.</p>
+        <p class="intro">A collection of worlds, connected by a loose thread.</p>
         <a class="explore" href="#worlds">Follow the thread <span>↓</span></a>
       </div>
       <div class="art" aria-hidden="true"><canvas id="contours"></canvas><div class="art-photo"></div><span class="art-cross">+</span><span class="art-label">FIG. 01 / A SIGNAL IN THE NOISE</span><span class="art-coordinate">51° N<br>∞ Hz</span></div>
@@ -31,8 +31,8 @@
     <section class="worlds" id="worlds" aria-labelledby="worlds-title">
       <div class="section-heading"><h2 id="worlds-title">Choose a world.</h2><span>06 doors / one loose thread</span></div>
       <div class="world-list">
-        <a class="world" href="http://www.pawel-osmolski.com/radiohead-remixes" data-image="images/radiohead-background-twisted.jpg"><span class="world-number">01</span><span class="world-name">Radiohead remixes</span><span class="world-type">Reassembled / reimagined</span><span class="world-arrow">↗</span></a>
-        <a class="world" href="https://www.filiposcar.com" data-image="images/filiposcar.jpg"><span class="world-number">02</span><span class="world-name">Filip Oscar</span><span class="world-type">Another voice</span><span class="world-arrow">↗</span></a>
+        <a class="world" href="http://www.pawel-osmolski.com/radiohead-remixes" data-image="images/radiohead-background-twisted.jpg"><span class="world-number">01</span><span class="world-name">radiohead remixes</span><span class="world-type">Reassembled / reimagined</span><span class="world-arrow">↗</span></a>
+        <a class="world" href="https://www.filiposcar.com" data-image="images/filiposcar.jpg"><span class="world-number">02</span><span class="world-name">FILIP OSCAR</span><span class="world-type">Another voice</span><span class="world-arrow">↗</span></a>
         <a class="world" href="http://www.pawel-osmolski.com" data-image="images/pawel-osmolski-glasses-right.jpg"><span class="world-number">03</span><span class="world-name">Pawel Osmolski</span><span class="world-type">Music / composition</span><span class="world-arrow">↗</span></a>
         <a class="world" href="media.php" data-image="images/devilhood-background-latin.jpg"><span class="world-number">04</span><span class="world-name">Media archive</span><span class="world-type">Trinkets &amp; treasures</span><span class="world-arrow">↗</span></a>
         <a class="world" href="http://www.crownandcraft.com" data-image="images/crownandcraft-background-microphone.jpg"><span class="world-number">05</span><span class="world-name">Crown &amp; Craft</span><span class="world-type">From the studio</span><span class="world-arrow">↗</span></a>
