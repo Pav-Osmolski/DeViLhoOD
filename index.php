@@ -8,8 +8,8 @@
   <meta property="og:title" content="devilhood — instance of a specified state">
   <meta property="og:image" content="https://www.devilhood.com/images/devilhood_logo.jpg">
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/site.css?v=20261003-8">
-  <script src="js/site.js?v=20261003-6" defer></script>
+  <link rel="stylesheet" href="css/site.css?v=20261003-9">
+  <script src="js/site.js?v=20261003-9" defer></script>
 </head>
 <body>
   <a class="skip" href="#worlds">Skip to the worlds</a>
@@ -20,7 +20,7 @@
   </header>
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy"><p class="eyebrow"><span class="signal-dot"></span> Independent transmissions / Pawel Osmolski</p>
+      <div class="hero-copy"><p class="eyebrow"><span class="signal-dot"></span> Independent transmissions / <span class="eyebrow-author">Pawel Osmolski</span></p>
         <h1 id="hero-title"><span class="headline-plain">a little<br>out of</span><br><em>frequency.</em></h1>
         <p class="intro">A collection of worlds, connected by a loose thread.</p>
         <a class="explore" href="#worlds">Follow the thread <span>↓</span></a>
