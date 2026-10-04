@@ -283,6 +283,10 @@ h1 em {
   letter-spacing:-.05em;
 }
 
+.world-name-strong {
+  font-weight:600;
+}
+
 .world-type {
   font:10px monospace;
   text-transform:uppercase;
