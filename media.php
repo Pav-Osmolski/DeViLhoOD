@@ -8,13 +8,13 @@
   <meta property="og:title" content="devilhood — media archive">
   <meta property="og:image" content="https://www.devilhood.com/images/devilhood_logo.jpg">
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/site.css?v=20261003-8">
+  <link rel="stylesheet" href="css/site.css?v=20261004-2">
   <script src="js/site.js?v=20261003-6" defer></script>
 </head>
 <body>
   <a class="skip" href="#collections">Skip to the collections</a>
   <header class="masthead">
-    <a class="brand" href="./" aria-label="devilhood home"><img src="images/devilhood/dhlogo_white2.gif" alt="devilhood" width="253" height="54"></a>
+    <a class="brand" href="./" aria-label="devilhood home"><img src="images/devilhood_logo_text_inverted.png" alt="devilhood" width="911" height="223"></a>
     <span class="mast-note">instance of a specified state</span>
     <nav aria-label="Main navigation"><a href="./">All worlds ↗</a><a href="mailto:pawel@pawel-osmolski.com">Say hello ↗</a></nav>
   </header>

@@ -81,8 +81,6 @@ a:focus-visible,button:focus-visible,input:focus-visible {
   width:190px;
   height:auto;
   display:block;
-  filter:invert(1);
-  mix-blend-mode:multiply;
 }
 
 .mast-note {
