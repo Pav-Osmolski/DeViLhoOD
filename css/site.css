@@ -730,7 +730,7 @@ body.motion-paused {
 html { scrollbar-gutter:stable; }
 .portal-open { overflow:hidden; }
 .portal-open .art-trigger::before { visibility:hidden; }
-.portal-open .art-photo { visibility:hidden; }
+.portal-open .art-photo { opacity:0; transition:opacity .2s ease; }
 .portal-viewer { position:fixed; inset:0; width:100vw; z-index:100; }
 .portal-image {
   position:absolute;
@@ -742,9 +742,13 @@ html { scrollbar-gutter:stable; }
   background-size:cover;
   background-position:center;
   transform-origin:0 0;
-  opacity:.5;
+  opacity:0;
   clip-path:var(--portal-start-clip,polygon(25% 0,100% 12%,82% 85%,0 100%,12% 45%));
   transition:none;
+}
+.portal-viewer.is-entering .portal-image {
+  opacity:.5;
+  transition:opacity .2s ease;
 }
 .portal-viewer.is-expanded .portal-image {
   width:100vw;
