@@ -61,12 +61,28 @@
     const current = photo.style.backgroundImage || getComputedStyle(photo).backgroundImage;
     const index = worlds.findIndex(world => current.includes(world.dataset.image));
     const rect = photo.getBoundingClientRect();
+    const photoStyle = getComputedStyle(photo);
+    const width = parseFloat(photoStyle.width), height = parseFloat(photoStyle.height);
+    // The bounding rectangle loses the photo's rotation. Compose the actual
+    // transforms, then place the same unrotated box and crop in viewport space.
+    let matrix = new DOMMatrix();
+    for (let element = photo; element; element = element.parentElement) {
+      const transform = getComputedStyle(element).transform;
+      if (transform !== 'none') matrix = new DOMMatrix(transform).multiply(matrix);
+    }
+    const left = rect.left + rect.width / 2 - (matrix.a * width + matrix.c * height) / 2;
+    const top = rect.top + rect.height / 2 - (matrix.b * width + matrix.d * height) / 2;
+    imageLink.style.setProperty('--portal-start-width', `${width}px`);
+    imageLink.style.setProperty('--portal-start-height', `${height}px`);
+    imageLink.style.setProperty('--portal-start-clip', photoStyle.clipPath);
+    imageLink.style.backgroundPosition = photoStyle.backgroundPosition;
+    imageLink.style.backgroundSize = photoStyle.backgroundSize;
     imageLink.style.backgroundImage = current;
     select(index < 0 ? 0 : index);
     viewer.hidden = false;
     viewer.classList.remove('is-expanded');
     followCentre();
-    imageLink.style.transform = `translate(${rect.left}px, ${rect.top}px) scale(${rect.width / innerWidth}, ${rect.height / innerHeight})`;
+    imageLink.style.transform = `matrix(${matrix.a},${matrix.b},${matrix.c},${matrix.d},${left},${top})`;
     trigger.setAttribute('aria-expanded', 'true');
     backgroundState = [...document.body.children].filter(el => el !== viewer && !['SCRIPT', 'STYLE'].includes(el.tagName)).map(el => [el, el.inert]);
     backgroundState.forEach(([el]) => { el.inert = true; });
