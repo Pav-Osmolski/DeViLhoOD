@@ -32,12 +32,12 @@
     <section class="worlds" id="worlds" aria-labelledby="worlds-title">
       <div class="section-heading"><h2 id="worlds-title">Choose a world.</h2><span>06 doors / one loose thread</span></div>
       <div class="world-list">
-        <a class="world" href="http://www.pawel-osmolski.com/radiohead-remixes" data-image="images/radiohead-background-twisted.jpg"><span class="world-number">01</span><span class="world-name">radiohead remixes</span><span class="world-type">Reassembled / reimagined</span><span class="world-arrow">↗</span></a>
+        <a class="world" href="https://www.pawel-osmolski.com/radiohead-remixes" data-image="images/radiohead-background-twisted.jpg"><span class="world-number">01</span><span class="world-name">radiohead remixes</span><span class="world-type">Reassembled / reimagined</span><span class="world-arrow">↗</span></a>
         <a class="world" href="https://www.filiposcar.com" data-image="images/filiposcar.jpg"><span class="world-number">02</span><span class="world-name world-name-strong">FILIP OSCAR</span><span class="world-type">Another voice</span><span class="world-arrow">↗</span></a>
-        <a class="world" href="http://www.pawel-osmolski.com" data-image="images/pawel-osmolski-glasses-right.jpg"><span class="world-number">03</span><span class="world-name world-name-strong">PAWEL OSMOLSKI</span><span class="world-type">Music / composition</span><span class="world-arrow">↗</span></a>
+        <a class="world" href="https://www.pawel-osmolski.com" data-image="images/pawel-osmolski-glasses-right.jpg"><span class="world-number">03</span><span class="world-name world-name-strong">PAWEL OSMOLSKI</span><span class="world-type">Music / composition</span><span class="world-arrow">↗</span></a>
         <a class="world" href="media.php" data-image="images/devilhood-background-latin.jpg"><span class="world-number">04</span><span class="world-name">Media archive</span><span class="world-type">Trinkets &amp; treasures</span><span class="world-arrow">↗</span></a>
-        <a class="world" href="http://www.crownandcraft.com" data-image="images/crownandcraft-background-microphone.jpg"><span class="world-number">05</span><span class="world-name">Crown &amp; Craft</span><span class="world-type">From the studio</span><span class="world-arrow">↗</span></a>
-        <a class="world" href="http://www.crunchalias.com" data-image="images/crunchalias-background-rockgarden.jpg"><span class="world-number">06</span><span class="world-name">CrunchAlias</span><span class="world-type">Electric memories</span><span class="world-arrow">↗</span></a>
+        <a class="world" href="https://www.crownandcraft.com" data-image="images/crownandcraft-background-microphone.jpg"><span class="world-number">05</span><span class="world-name">Crown &amp; Craft</span><span class="world-type">From the studio</span><span class="world-arrow">↗</span></a>
+        <a class="world" href="https://www.crunchalias.com" data-image="images/crunchalias-background-rockgarden.jpg"><span class="world-number">06</span><span class="world-name">CrunchAlias</span><span class="world-type">Electric memories</span><span class="world-arrow">↗</span></a>
       </div>
       <p class="postscript">Everything leaves an echo<span aria-hidden="true">⤳</span></p>
     </section>
