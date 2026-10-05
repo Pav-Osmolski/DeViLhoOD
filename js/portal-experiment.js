@@ -16,7 +16,7 @@
   const signal = viewer.querySelector('.portal-signal');
   const name = viewer.querySelector('.portal-name');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let selected = 0, requested = 0, selectionVersion = 0, opened = false, expandTimer = 0, wheelSum = 0, lastWheel = 0;
+  let selected = 0, requested = 0, selectionVersion = 0, opened = false, expandTimer = 0, completionTimer = 0, wheelSum = 0, lastWheel = 0;
   let backgroundState = [];
   // Keep the current decoded photograph visible until its replacement is ready.
   const photographs = new Map();
@@ -50,10 +50,21 @@
   };
   trigger.addEventListener('art-centre-change', followCentre);
   window.addEventListener('resize', followCentre, { passive: true });
+  const finishExpansion = () => {
+    if (!opened || !viewer.classList.contains('is-expanded')) return;
+    clearTimeout(completionTimer);
+    viewer.classList.add('is-complete');
+  };
+  imageLink.addEventListener('transitionend', event => {
+    if (event.target === imageLink && event.propertyName === 'width') finishExpansion();
+  });
   const expand = () => {
+    clearTimeout(completionTimer);
     viewer.classList.add('is-expanded');
     imageLink.style.transform = 'none';
     imageLink.focus({ preventScroll: true });
+    if (reduced.matches || document.body.classList.contains('motion-paused')) finishExpansion();
+    else completionTimer = setTimeout(finishExpansion, 1650);
   };
   const open = () => {
     if (opened) return;
@@ -62,6 +73,7 @@
     const index = worlds.findIndex(world => current.includes(world.dataset.image));
     const rect = photo.getBoundingClientRect();
     const photoStyle = getComputedStyle(photo);
+    signal.style.setProperty('--portal-signal-fill', getComputedStyle(trigger, '::before').backgroundColor);
     const width = parseFloat(photoStyle.width), height = parseFloat(photoStyle.height);
     // The bounding rectangle loses the photo's rotation. Compose the actual
     // transforms, then place the same unrotated box and crop in viewport space.
@@ -80,7 +92,7 @@
     imageLink.style.backgroundImage = current;
     select(index < 0 ? 0 : index);
     viewer.hidden = false;
-    viewer.classList.remove('is-expanded');
+    viewer.classList.remove('is-expanded', 'is-complete');
     followCentre();
     imageLink.style.transform = `matrix(${matrix.a},${matrix.b},${matrix.c},${matrix.d},${left},${top})`;
     trigger.setAttribute('aria-expanded', 'true');
@@ -99,8 +111,9 @@
     opened = false;
     selectionVersion++;
     clearTimeout(expandTimer);
+    clearTimeout(completionTimer);
     viewer.hidden = true;
-    viewer.classList.remove('is-entering', 'is-expanded');
+    viewer.classList.remove('is-entering', 'is-expanded', 'is-complete');
     document.documentElement.classList.remove('portal-open');
     backgroundState.forEach(([el, inert]) => { el.inert = inert; });
     backgroundState = [];
@@ -109,7 +122,6 @@
     wheelSum = 0;
   };
   trigger.hidden = false;
-  trigger.addEventListener('pointerenter', event => { if (event.pointerType !== 'touch') open(); });
   trigger.addEventListener('click', open);
   imageLink.addEventListener('click', event => {
     if (!viewer.classList.contains('is-expanded')) event.preventDefault();
