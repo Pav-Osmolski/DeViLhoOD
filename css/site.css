@@ -753,7 +753,7 @@ html { scrollbar-gutter:stable; }
 .portal-viewer.is-expanded .portal-image {
   width:100vw;
   height:100vh;
-  transition:width 1.6s cubic-bezier(.22,.61,.36,1),height 1.6s cubic-bezier(.22,.61,.36,1),transform 1.6s cubic-bezier(.22,.61,.36,1),opacity 1.6s ease,clip-path 1.6s ease;
+  transition:width 1.6s cubic-bezier(.45,0,.2,1),height 1.6s cubic-bezier(.45,0,.2,1),transform 1.6s cubic-bezier(.45,0,.2,1),opacity 1.6s ease,clip-path 1.6s cubic-bezier(.45,0,.2,1);
   background-color:#000;
   opacity:1;
   clip-path:polygon(0 0,100% 0,100% 100%,0 100%,0 45%);
