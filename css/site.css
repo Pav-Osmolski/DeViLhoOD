@@ -730,7 +730,7 @@ body.motion-paused {
 html { scrollbar-gutter:stable; }
 .portal-open { overflow:hidden; }
 .portal-open .art-trigger::before { visibility:hidden; }
-.portal-open .art-photo { opacity:0; transition:opacity .2s ease; }
+.portal-open .art-photo { opacity:0; transition:opacity .5s ease; }
 .portal-viewer { position:fixed; inset:0; width:100vw; z-index:100; }
 .portal-image {
   position:absolute;
@@ -748,7 +748,7 @@ html { scrollbar-gutter:stable; }
 }
 .portal-viewer.is-entering .portal-image {
   opacity:.5;
-  transition:opacity .2s ease;
+  transition:opacity .5s ease;
 }
 .portal-viewer.is-expanded .portal-image {
   width:100vw;
