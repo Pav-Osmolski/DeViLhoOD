@@ -2,6 +2,7 @@
   'use strict';
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const canvas = document.querySelector('#contours');
+  const artTrigger = document.querySelector('.art-trigger');
   const toggle = document.querySelector('.motion-toggle');
   let paused = reduced.matches;
   let frame = 0;
@@ -41,7 +42,13 @@
         ctx.strokeStyle = accent;
         ctx.lineWidth = 1.4;
         // Outer radius is 7.2px, 20% smaller than the original 9px dot.
-        ctx.beginPath();ctx.arc(cx, cy, 6.5, 0, Math.PI * 2);ctx.stroke();
+        if (artTrigger) {
+          artTrigger.style.left = `${cx}px`;
+          artTrigger.style.top = `${cy}px`;
+          artTrigger.dispatchEvent(new Event('art-centre-change'));
+        } else {
+          ctx.beginPath();ctx.arc(cx, cy, 6.5, 0, Math.PI * 2);ctx.stroke();
+        }
       };
       let last = 0;
       const animate = time => {
