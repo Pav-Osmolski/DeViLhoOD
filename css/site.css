@@ -740,9 +740,10 @@ html { scrollbar-gutter:stable; }
   transform-origin:0 0;
   opacity:.5;
   clip-path:polygon(25% 0,100% 12%,82% 85%,0 100%,12% 45%);
-  transition:transform 1.6s cubic-bezier(.22,.61,.36,1),opacity 1.6s ease,clip-path 1.6s ease;
+  transition:none;
 }
 .portal-viewer.is-expanded .portal-image {
+  transition:transform 1.6s cubic-bezier(.22,.61,.36,1),opacity 1.6s ease,clip-path 1.6s ease;
   background-color:#000;
   opacity:1;
   clip-path:polygon(0 0,100% 0,100% 100%,0 100%,0 45%);
