@@ -727,16 +727,17 @@ body.motion-paused {
   border-radius:50%;
   box-sizing:border-box;
 }
-.art-trigger::before { background:transparent; transition:background-color .8s ease; }
+.art-trigger::before { z-index:1; background:transparent; transition:background-color .8s ease; }
 .art-trigger:hover::before, .art-trigger:focus-visible::before {
   background:var(--perfect-purple);
 }
 .art-trigger::after {
+  z-index:0;
   border:0;
   opacity:0;
   box-shadow:0 0 22px 10px #000b;
   transition:opacity .8s ease;
-  animation:portal-pulse 2.4s ease-in-out infinite;
+  animation:portal-hover-glow 2.4s ease-in-out infinite;
   pointer-events:none;
 }
 .art-trigger:hover::after, .art-trigger:focus-visible::after { opacity:1; }
@@ -775,6 +776,10 @@ html { scrollbar-gutter:stable; }
 .portal-signal::before { background:var(--portal-signal-fill,transparent); transition:background-color .8s ease; }
 .is-entering .portal-signal::before { background:var(--perfect-purple); animation:portal-pulse 2.4s ease-in-out .8s infinite; }
 .portal-viewer.is-complete .portal-signal { opacity:0; }
+@keyframes portal-hover-glow {
+  0%,100% { box-shadow:0 0 0 0 #0000; }
+  50% { box-shadow:0 0 22px 10px #000b; }
+}
 @keyframes portal-pulse {
   0%,100% { box-shadow:0 0 0 0 #0000; transform:translate(-50%,-50%) scale(1); }
   50% { box-shadow:0 0 22px 10px #000b; transform:translate(-50%,-50%) scale(1.2); }
