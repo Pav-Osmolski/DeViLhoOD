@@ -45,6 +45,7 @@
         if (artTrigger) {
           artTrigger.style.left = `${cx}px`;
           artTrigger.style.top = `${cy}px`;
+          artTrigger.dispatchEvent(new Event('art-centre-change'));
         } else {
           ctx.beginPath();ctx.arc(cx, cy, 6.5, 0, Math.PI * 2);ctx.stroke();
         }

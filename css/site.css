@@ -727,8 +727,10 @@ body.motion-paused {
   border-radius:50%;
   box-sizing:border-box;
 }
+html { scrollbar-gutter:stable; }
 .portal-open { overflow:hidden; }
-.portal-viewer { position:fixed; inset:0; z-index:100; }
+.portal-open .art-trigger::before { visibility:hidden; }
+.portal-viewer { position:fixed; inset:0; width:100vw; z-index:100; }
 .portal-image {
   position:absolute;
   inset:0;
@@ -741,6 +743,7 @@ body.motion-paused {
   transition:transform 1.6s cubic-bezier(.22,.61,.36,1),opacity 1.6s ease,clip-path 1.6s ease;
 }
 .portal-viewer.is-expanded .portal-image {
+  background-color:#000;
   opacity:1;
   clip-path:polygon(0 0,100% 0,100% 100%,0 100%,0 45%);
 }

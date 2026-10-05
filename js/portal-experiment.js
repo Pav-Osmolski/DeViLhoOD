@@ -16,17 +16,40 @@
   const signal = viewer.querySelector('.portal-signal');
   const name = viewer.querySelector('.portal-name');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let selected = 0, opened = false, expandTimer = 0, wheelSum = 0, lastWheel = 0;
+  let selected = 0, requested = 0, selectionVersion = 0, opened = false, expandTimer = 0, wheelSum = 0, lastWheel = 0;
   let backgroundState = [];
-  const select = index => {
-    selected = (index + worlds.length) % worlds.length;
-    const world = worlds[selected];
+  // Keep the current decoded photograph visible until its replacement is ready.
+  const photographs = new Map();
+  const prepare = url => {
+    if (!photographs.has(url)) {
+      const photograph = new Image();
+      photograph.src = url;
+      photographs.set(url, photograph.decode().then(() => photograph).catch(() => null));
+    }
+    return photographs.get(url);
+  };
+  worlds.forEach(world => prepare(world.dataset.image));
+  const select = async index => {
+    requested = (index + worlds.length) % worlds.length;
+    const next = requested;
+    const version = ++selectionVersion;
+    const world = worlds[next];
+    if (!await prepare(world.dataset.image) || version !== selectionVersion || !opened) return;
+    selected = next;
     imageLink.style.backgroundImage = `url("${world.dataset.image}")`;
     imageLink.href = world.href;
     imageLink.setAttribute('aria-label', `Visit ${world.querySelector('.world-name').textContent}`);
     name.textContent = `${String(selected + 1).padStart(2, '0')} / ${world.querySelector('.world-name').textContent}`;
     photo.style.backgroundImage = `url("${world.dataset.image}")`;
   };
+  const followCentre = () => {
+    if (!opened) return;
+    const centre = trigger.getBoundingClientRect();
+    signal.style.left = `${centre.left + centre.width / 2}px`;
+    signal.style.top = `${centre.top + centre.height / 2}px`;
+  };
+  trigger.addEventListener('art-centre-change', followCentre);
+  window.addEventListener('resize', followCentre, { passive: true });
   const expand = () => {
     viewer.classList.add('is-expanded');
     imageLink.style.transform = 'none';
@@ -38,12 +61,11 @@
     const current = photo.style.backgroundImage || getComputedStyle(photo).backgroundImage;
     const index = worlds.findIndex(world => current.includes(world.dataset.image));
     const rect = photo.getBoundingClientRect();
-    const centre = trigger.getBoundingClientRect();
+    imageLink.style.backgroundImage = current;
     select(index < 0 ? 0 : index);
     viewer.hidden = false;
     viewer.classList.remove('is-expanded');
-    signal.style.left = `${centre.left + centre.width / 2}px`;
-    signal.style.top = `${centre.top + centre.height / 2}px`;
+    followCentre();
     imageLink.style.transform = `translate(${rect.left}px, ${rect.top}px) scale(${rect.width / innerWidth}, ${rect.height / innerHeight})`;
     trigger.setAttribute('aria-expanded', 'true');
     backgroundState = [...document.body.children].filter(el => el !== viewer && !['SCRIPT', 'STYLE'].includes(el.tagName)).map(el => [el, el.inert]);
@@ -59,6 +81,7 @@
   const close = () => {
     if (!opened) return;
     opened = false;
+    selectionVersion++;
     clearTimeout(expandTimer);
     viewer.hidden = true;
     viewer.classList.remove('is-entering', 'is-expanded');
@@ -76,8 +99,8 @@
     if (!viewer.classList.contains('is-expanded')) event.preventDefault();
   });
   viewer.querySelector('.portal-close').addEventListener('click', close);
-  viewer.querySelector('.portal-previous').addEventListener('click', () => select(selected - 1));
-  viewer.querySelector('.portal-next').addEventListener('click', () => select(selected + 1));
+  viewer.querySelector('.portal-previous').addEventListener('click', () => select(requested - 1));
+  viewer.querySelector('.portal-next').addEventListener('click', () => select(requested + 1));
   imageLink.addEventListener('wheel', event => {
     event.preventDefault();
     if (!viewer.classList.contains('is-expanded')) return;
@@ -85,13 +108,13 @@
     if (now - lastWheel < 450) return;
     wheelSum += event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? innerHeight : 1);
     if (Math.abs(wheelSum) < 60) return;
-    select(selected + Math.sign(wheelSum));
+    select(requested + Math.sign(wheelSum));
     wheelSum = 0; lastWheel = now;
   }, { passive: false });
   viewer.addEventListener('keydown', event => {
     if (event.key === 'Escape') { event.preventDefault(); close(); }
-    else if (event.key === 'ArrowRight' || event.key === 'ArrowDown') { event.preventDefault(); select(selected + 1); }
-    else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') { event.preventDefault(); select(selected - 1); }
+    else if (event.key === 'ArrowRight' || event.key === 'ArrowDown') { event.preventDefault(); select(requested + 1); }
+    else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') { event.preventDefault(); select(requested - 1); }
     else if (event.key === 'Tab') {
       const controls = [...viewer.querySelectorAll('a,button')];
       const first = controls[0], last = controls[controls.length - 1];
