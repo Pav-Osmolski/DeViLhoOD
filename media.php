@@ -8,7 +8,7 @@
   <meta property="og:title" content="devilhood — media archive">
   <meta property="og:image" content="https://www.devilhood.com/images/devilhood_logo.jpg">
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/site.css?v=20261004-2">
+  <link rel="stylesheet" href="css/site.css?v=20261005-12">
   <script src="js/site.js?v=20261003-6" defer></script>
 </head>
 <body>
@@ -151,3 +151,4 @@
   <footer class="footer"><span>© <?php echo date('Y'); ?> <a href="http://www.pawel-osmolski.com">Pawel Osmolski</a></span><span>All manner of trinkets &amp; treasures.</span><a href="#collections">Back to top ↑</a></footer>
 </body>
 </html>
+

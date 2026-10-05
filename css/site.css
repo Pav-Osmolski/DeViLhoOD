@@ -357,6 +357,10 @@ h1 em {
   font-size:14px;
 }
 
+.archive-intro .eyebrow {
+  max-width:none;
+}
+
 .archive-nav {
   display:flex;
   flex-wrap:wrap;
