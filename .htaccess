@@ -1,61 +1,75 @@
+# Canonical public URL: https://www.devilhood.com
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
-  # Preserve old archive bookmarks and query strings.
-  RewriteRule ^media\.htm$ media.php [R=301,L,NE]
-  RewriteCond %{HTTP_HOST} ^devilhood.com [NC]
-  RewriteRule ^(.*)$ http://www.devilhood.com/$1 [L,R=301]
-  RewriteCond %{HTTP_HOST} ^(www\.)?devilhood\.co\.uk$ [NC]
-  RewriteRule ^(.*)$ http://www.devilhood.com/$1 [R=301,L]
+
+  # Resolve the legacy archive, hostname and scheme in one redirect.
+  RewriteCond %{HTTP_HOST} ^(?:www\.)?devilhood\.(?:com|co\.uk)(?::[0-9]+)?$ [NC]
+  RewriteRule ^media\.htm$ https://www.devilhood.com/media.php [R=301,L,NE]
+
+  RewriteCond %{HTTP_HOST} ^(?:devilhood\.com|(?:www\.)?devilhood\.co\.uk)(?::[0-9]+)?$ [NC]
+  RewriteRule ^ https://www.devilhood.com%{REQUEST_URI} [R=301,L,NE]
+
+  # Cloudflare/LiteSpeed may terminate TLS before Apache sees the request.
+  # Only trust X-Forwarded-Proto when the hosting proxy overwrites it.
+  RewriteCond %{HTTP_HOST} ^www\.devilhood\.com(?::[0-9]+)?$ [NC]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !^https$ [NC]
+  RewriteRule ^ https://www.devilhood.com%{REQUEST_URI} [R=301,L,NE]
+
+  # Keep local previews and other non-production hosts usable.
+  RewriteRule ^media\.htm$ /media.php [R=301,L,NE]
 </IfModule>
 
-## EXPIRES CACHING ##
+# MIME declarations do not depend on the caching module being installed.
+<IfModule mod_mime.c>
+  AddType application/vnd.ms-fontobject .eot
+  AddType font/ttf .ttf
+  AddType font/otf .otf
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+  AddType image/svg+xml .svg
+</IfModule>
+
+# Revalidate pages; cache static assets without marking mutable URLs immutable.
 <IfModule mod_expires.c>
-ExpiresActive On
-
-ExpiresByType image/jpg "access 1 week"
-ExpiresByType image/jpeg "access 1 week"
-ExpiresByType image/gif "access 1 week"
-ExpiresByType image/png "access 1 week"
-ExpiresByType text/css "access 1 week"
-ExpiresByType text/html "access 1 week"
-ExpiresByType application/pdf "access 1 week"
-ExpiresByType text/x-javascript "access 1 week"
-ExpiresByType application/x-shockwave-flash "access 1 week"
-ExpiresByType image/x-icon "access 1 week"
-ExpiresDefault "access 1 week"
-
-# Add correct content-type for fonts
-AddType application/vnd.ms-fontobject .eot
-AddType font/ttf .ttf
-AddType font/otf .otf
-AddType font/woff .woff
-AddType font/woff2 .woff2
-AddType image/svg+xml .svg
-
-# Compress compressible fonts
-AddOutputFilterByType DEFLATE font/ttf font/otf image/svg+xml
-
-# Add a far future Expires header for fonts
-ExpiresByType application/vnd.ms-fontobject "access 1 month"
-ExpiresByType font/ttf "access 1 month"
-ExpiresByType font/otf "access 1 month"
-ExpiresByType font/woff "access 1 month"
-ExpiresByType font/woff2 "access 1 month"
-ExpiresByType image/svg+xml "access 1 month"
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType text/javascript "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType application/x-javascript "access plus 1 week"
+  ExpiresByType image/jpeg "access plus 1 week"
+  ExpiresByType image/gif "access plus 1 week"
+  ExpiresByType image/png "access plus 1 week"
+  ExpiresByType image/webp "access plus 1 week"
+  ExpiresByType image/avif "access plus 1 week"
+  ExpiresByType image/svg+xml "access plus 1 week"
+  ExpiresByType image/x-icon "access plus 1 week"
+  ExpiresByType image/vnd.microsoft.icon "access plus 1 week"
+  ExpiresByType application/pdf "access plus 1 week"
+  ExpiresByType audio/mpeg "access plus 1 week"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+  ExpiresByType font/ttf "access plus 1 month"
+  ExpiresByType font/otf "access plus 1 month"
+  ExpiresByType font/woff "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 month"
 </IfModule>
-## EXPIRES CACHING ##
 
+# Compress text and uncompressed fonts, not JPEG/PNG/MP3/WOFF/WOFF2 files.
 <IfModule mod_deflate.c>
-AddOutputFilterByType DEFLATE text/plain
-AddOutputFilterByType DEFLATE text/html
-AddOutputFilterByType DEFLATE text/xml
-AddOutputFilterByType DEFLATE text/css
-AddOutputFilterByType DEFLATE application/xml
-AddOutputFilterByType DEFLATE application/xhtml+xml
-AddOutputFilterByType DEFLATE application/rss+xml
-AddOutputFilterByType DEFLATE application/javascript
-AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+  AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml font/ttf font/otf
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  <FilesMatch "(?i)\.(?:php|html?)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
 </IfModule>
 
 ErrorDocument 400 /error-pages/400.html
