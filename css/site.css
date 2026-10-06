@@ -45,6 +45,14 @@ a {
   color:inherit;
 }
 
+/* Dark Reader changes text colours but cannot reliably recolour the paper image. */
+html[data-darkreader-scheme="dark"] body:before {
+  filter:brightness(.18) saturate(.6);
+}
+html[data-darkreader-scheme="dark"] .brand img {
+  filter:invert(1);
+}
+
 button,input {
   font:inherit;
 }

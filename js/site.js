@@ -10,7 +10,6 @@
   let pointer = { x: 0, y: 0 };
   if (canvas) {
     const ctx = canvas.getContext('2d');
-    const accent = getComputedStyle(document.documentElement).getPropertyValue('--perfect-purple').trim();
     if (ctx) {
       let width = 0, height = 0;
       const resize = () => {
@@ -21,6 +20,8 @@
         draw();
       };
       const draw = () => {
+        const ink = getComputedStyle(canvas).color;
+        const accent = artTrigger ? getComputedStyle(artTrigger, '::before').borderTopColor : getComputedStyle(document.documentElement).getPropertyValue('--perfect-purple').trim();
         ctx.clearRect(0, 0, width, height);
         const cx = width * .48 + pointer.x * 10;
         const cy = height * .48 + pointer.y * 10;
@@ -35,7 +36,7 @@
             point ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
           }
           ctx.closePath();
-          ctx.strokeStyle = ring > 32 && ring < 38 ? accent : '#232520';
+          ctx.strokeStyle = ring > 32 && ring < 38 ? accent : ink;
           ctx.lineWidth = ring % 5 === 0 ? 1.7 : .8;
           ctx.stroke();
         }
@@ -69,6 +70,12 @@
       document.addEventListener('visibilitychange', sync);
       reduced.addEventListener('change', event => { paused = event.matches; sync(); });
       toggle?.addEventListener('click', () => { paused = !paused; sync(); });
+      // Theme switches must also redraw the canvas when motion is paused.
+      let themeFrame = 0;
+      new MutationObserver(() => {
+        if (themeFrame) cancelAnimationFrame(themeFrame);
+        themeFrame = requestAnimationFrame(() => { themeFrame = 0; draw(); });
+      }).observe(document.documentElement, { attributes:true, attributeFilter:['data-darkreader-scheme', 'style'] });
       resize();sync();
     }
     const photo = document.querySelector('.art-photo');
