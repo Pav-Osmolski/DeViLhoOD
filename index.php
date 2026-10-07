@@ -8,6 +8,7 @@
   <meta property="og:title" content="devilhood — instance of a specified state">
   <meta property="og:image" content="https://www.devilhood.com/images/devilhood_logo.jpg">
   <link rel="icon" href="favicon.ico">
+  <link rel="preload" href="/fonts/The-Dreamer.woff" as="font" type="font/woff" crossorigin>
   <link rel="stylesheet" href="css/site.css?v=<?= filemtime( 'css/site.css' ); ?>">
   <script src="js/site.js?v=<?= filemtime( 'js/site.js' ); ?>" defer></script>
   <script src="js/portal-experiment.js?v=<?= filemtime( 'js/portal-experiment.js' ); ?>" defer></script>
