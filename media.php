@@ -8,8 +8,8 @@
   <meta property="og:title" content="devilhood — media archive">
   <meta property="og:image" content="https://www.devilhood.com/images/devilhood_logo.jpg">
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/site.css?v=20261006-1">
-  <script src="js/site.js?v=20261006-1" defer></script>
+  <link rel="stylesheet" href="css/site.css?v=<?= filemtime( 'css/site.css' ); ?>">
+  <script src="js/site.js?v=<?= filemtime( 'js/site.js' ); ?>" defer></script>
 </head>
 <body>
   <a class="skip" href="#collections">Skip to the collections</a>

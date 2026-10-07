@@ -359,7 +359,7 @@ h1 em {
   font-size:clamp(65px,9vw,130px);
 }
 
-.archive-intro p {
+.archive-intro p:not(.eyebrow) {
   line-height:1.7;
   max-width:390px;
   font-size:14px;
